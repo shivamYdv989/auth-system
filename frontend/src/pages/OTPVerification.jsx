@@ -87,7 +87,7 @@ function OTPVerification() {
   //   setMessage("");
 
   //   try {
-  //     const res = await axios.post("http://localhost:5000/api/auth/verify-phone-otp", {
+  //     const res = await axios.post("https://auth-system-ejul.vercel.app/api/auth/verify-phone-otp", {
   //       mobile,
   //       otp,
   //     });
@@ -113,7 +113,7 @@ function OTPVerification() {
 
   //   try {
   //     const res = await axios.post(
-  //       "http://localhost:5000/api/auth/send-phone-otp",
+  //       "https://auth-system-ejul.vercel.app/api/auth/send-phone-otp",
   //       { mobile }
   //     );
 
