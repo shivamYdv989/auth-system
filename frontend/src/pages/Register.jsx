@@ -66,7 +66,7 @@ function Register() {
 
     try {
       const res = await axios.post(
-        "https://auth-system-ejul.vercel.app/api/auth/register",
+        "https://auth-system-4dje.onrender.com/api/auth/register",
         {
           ...formData,
           isEmailVerified: emailVerified,
