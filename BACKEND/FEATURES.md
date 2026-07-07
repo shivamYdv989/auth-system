@@ -170,7 +170,7 @@ EMAIL_PORT=587
 TWILIO_SID=your_twilio_sid
 TWILIO_AUTH_TOKEN=your_twilio_token
 TWILIO_PHONE=+1XXXXXXXXXX
-FRONTEND_URL=auth-system-ejul.vercel.app
+FRONTEND_URL=localhost:5000
 ```
 
 3. Start MongoDB:
