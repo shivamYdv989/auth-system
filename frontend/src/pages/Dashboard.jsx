@@ -27,9 +27,9 @@ function Dashboard() {
       const headers = { Authorization: `Bearer ${accessToken}` };
 
       const [profileRes, historyRes, sessionsRes] = await Promise.all([
-        axios.get("http://localhost:5000/api/auth/profile", { headers }),
-        axios.get("http://localhost:5000/api/auth/login-history", { headers }),
-        axios.get("http://localhost:5000/api/auth/sessions", { headers }),
+        axios.get("https://auth-system-3gpb.vercel.app/api/auth/profile", { headers }),
+        axios.get("https://auth-system-3gpb.vercel.app/api/auth/login-history", { headers }),
+        axios.get("https://auth-system-3gpb.vercel.app/api/auth/sessions", { headers }),
       ]);
 
       setUser(profileRes.data.user);
@@ -52,7 +52,7 @@ function Dashboard() {
       const headers = { Authorization: `Bearer ${accessToken}` };
 
       await axios.post(
-        "http://localhost:5000/api/auth/logout",
+        "https://auth-system-3gpb.vercel.app/api/auth/logout",
         { refreshToken },
         { headers }
       );
@@ -69,7 +69,7 @@ function Dashboard() {
   const handleLogoutAllDevices = async () => {
     try {
       const headers = { Authorization: `Bearer ${accessToken}` };
-      await axios.post("http://localhost:5000/api/auth/logout-all-devices", {}, { headers });
+      await axios.post("https://auth-system-3gpb.vercel.app/api/auth/logout-all-devices", {}, { headers });
 
       localStorage.removeItem("accessToken");
       localStorage.removeItem("refreshToken");
@@ -84,7 +84,7 @@ function Dashboard() {
     try {
       const headers = { Authorization: `Bearer ${accessToken}` };
       await axios.post(
-        "http://localhost:5000/api/auth/remove-session",
+        "https://auth-system-3gpb.vercel.app/api/auth/remove-session",
         { sessionId },
         { headers }
       );

@@ -66,7 +66,7 @@ function Register() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://auth-system-3gpb.vercel.app/api/auth/register",
         {
           ...formData,
           isEmailVerified: emailVerified,

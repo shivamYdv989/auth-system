@@ -31,12 +31,12 @@ function Login() {
         try {
             if (loginMethod === "email-otp") {
                 const email = formData.email.toLowerCase().trim();
-                await axios.post("http://localhost:5000/api/auth/send-email-otp", {
+                await axios.post("https://auth-system-3gpb.vercel.app/api/auth/send-email-otp", {
                     email,
                 });
             } else if (loginMethod === "phone-otp") {
                 const mobile = formData.mobile.trim();
-                await axios.post("http://localhost:5000/api/auth/send-phone-otp", {
+                await axios.post("https://auth-system-3gpb.vercel.app/api/auth/send-phone-otp", {
                     mobile,
                 });
             }
@@ -72,7 +72,7 @@ function Login() {
                 payload = { mobile: formData.mobile.trim(), otp: formData.otp.toString().trim(), deviceName: "Web", ipAddress };
             }
 
-            const res = await axios.post(`http://localhost:5000/api/auth${endpoint}`, payload);
+            const res = await axios.post(`https://auth-system-3gpb.vercel.app/api/auth${endpoint}`, payload);
             setMessage(res.data.message);
 
             localStorage.setItem("accessToken", res.data.accessToken);
