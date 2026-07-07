@@ -43,7 +43,7 @@ function OTPVerification() {
     setMessage("");
 
     try {
-      const res = await axios.post("https://auth-system-3gpb.vercel.app/api/auth/send-email-otp", { email });
+      const res = await axios.post("https://auth-system-ejul.vercel.app/api/auth/send-email-otp", { email });
       setMessage(res.data.message);
       setShowOTPField(true);
     } catch (err) {
@@ -60,7 +60,7 @@ function OTPVerification() {
     setMessage("");
 
     try {
-      const res = await axios.post("https://auth-system-3gpb.vercel.app/api/auth/verify-email-otp", {
+      const res = await axios.post("https://auth-system-ejul.vercel.app/api/auth/verify-email-otp", {
         email,
         otp,
       });
@@ -134,7 +134,7 @@ function OTPVerification() {
 
     try {
       const res = await axios.post(
-        "https://auth-system-3gpb.vercel.app/api/auth/send-phone-otp",
+        "https://auth-system-ejul.vercel.app/api/auth/send-phone-otp",
         { mobile }
       );
 
@@ -157,7 +157,7 @@ function OTPVerification() {
 
     try {
       const res = await axios.post(
-        "https://auth-system-3gpb.vercel.app/api/auth/verify-phone-otp",
+        "https://auth-system-ejul.vercel.app/api/auth/verify-phone-otp",
         {
           mobile,
           otp,

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "https://auth-system-3gpb.vercel.app/api";
+const API_BASE_URL = "https://auth-system-ejul.vercel.app/api";
 
 const api = axios.create({
     baseURL: API_BASE_URL,
