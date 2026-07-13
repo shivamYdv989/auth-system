@@ -5,21 +5,21 @@
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --font-synthesis: none;
+  --text-rendering: optimizeLegibility;
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
 }
 
 
-body{
-    background: var(--bg-gradient);
-margin:0;
+body {
+  background: var(--background);
+  margin: 0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    
+
     --text: #9ca3af;
     --text-h: #f3f4f6;
     --border: #2e303a;
@@ -27,12 +27,7 @@ margin:0;
     --accent: #c084fc;
 
 
-    --bg-gradient: linear-gradient(
-      to bottom right,
-      #020617,
-      #312e81,
-      #0f172a
-    );
+    --background: #f7f8ff;
 
     --accent-bg: rgba(192, 132, 252, 0.15);
     --accent-border: rgba(192, 132, 252, 0.5);
@@ -59,7 +54,7 @@ margin:0;
   flex-direction: column;
   box-sizing: border-box;
 
-  
+
 }
 
 h1,
@@ -73,6 +68,7 @@ h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
   margin: 32px 0;
+
   @media (max-width: 1024px) {
     font-size: 36px;
     margin: 20px 0;
@@ -87,10 +83,10 @@ h2 {
     font-size: 20px;
   }
 }
+
 p {
   margin: 0;
 }
-
 code,
 .counter {
   font-family: var(--mono);

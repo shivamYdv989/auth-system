@@ -61,10 +61,10 @@ exports.sendEmailOTP = async (req, res) => {
 
 
 
-   //database save karta 
+    //database save karta 
 
 
-    await OTP.create({ 
+    await OTP.create({
       email,
       otp,
       type: "email",
@@ -174,6 +174,8 @@ exports.sendPhoneOTP = async (req, res) => {
     });
 
     console.log(`Phone OTP for ${mobile}: ${otp}`);
+        console.log("Phone OTP:", otp);
+
     await sendOTP("+91 872 6322 928", otp);
 
     return res.status(200).json({ success: true, message: "OTP sent to phone successfully" });

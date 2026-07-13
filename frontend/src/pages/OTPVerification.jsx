@@ -6,7 +6,7 @@ function OTPVerification() {
 
 
   const location = useLocation();
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const searchState = location.state || {};
   const [verificationStep, setVerificationStep] = useState(searchState.verificationStep || "email"); // email or phone
   const [email, setEmail] = useState(searchState.email || "");
@@ -19,6 +19,9 @@ function OTPVerification() {
   const [context, setContext] = useState(searchState.context || "");
   const [returnTo, setReturnTo] = useState(searchState.returnTo || "/login");
 
+
+
+  
   useEffect(() => {
     if (searchState.verificationStep) {
       setVerificationStep(searchState.verificationStep);
@@ -78,55 +81,6 @@ function OTPVerification() {
     }
   };
 
-
-
-  // const handleVerifyPhoneOTP = async (e) => {
-  //   e.preventDefault();
-  //   setLoading(true);
-  //   setError("");
-  //   setMessage("");
-
-  //   try {
-  //     const res = await axios.post("https://auth-system-4dje.onrender.com/api/auth/verify-phone-otp", {
-  //       mobile,
-  //       otp,
-  //     });
-  //     setMessage(res.data.message);
-  //     if (context === "register") {
-  //       localStorage.setItem("registerMobileVerified", "true");
-  //       navigate(returnTo || "/register", { replace: true });
-  //     } else {
-  //       setTimeout(() => navigate("/login"), 2000);
-  //     }
-  //   } catch (err) {
-  //     setError(err.response?.data?.message || "Failed to verify OTP");
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-
-  // const handleSendPhoneOTP = async () => {
-  //   setLoading(true);
-  //   setError("");
-  //   setMessage("");
-
-  //   try {
-  //     const res = await axios.post(
-  //       "https://auth-system-4dje.onrender.com/api/auth/send-phone-otp",
-  //       { mobile }
-  //     );
-
-  //     setMessage(res.data.message);
-  //     setShowOTPField(true);
-  //   } catch (err) {
-  //     setError(err.response?.data?.message || "Failed to send OTP");
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-
   const handleSendPhoneOTP = async () => {
     setLoading(true);
     setError("");
@@ -146,8 +100,6 @@ function OTPVerification() {
       setLoading(false);
     }
   };
-
-
 
   const handleVerifyPhoneOTP = async (e) => {
     e.preventDefault();
